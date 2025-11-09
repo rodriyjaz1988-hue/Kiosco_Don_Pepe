@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Kiosco_Don_Pepe.Usuario>
+
+@{
+    ViewBag.Title = "Lista de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="glass-card-usuarios animate__animated animate__fadeInUp shadow-lg">
+        <h2 class="mb-4 text-center">👥 Lista de Usuarios</h2>
+
+        <div class="d-flex justify-content-end mb-3">
+            @Html.ActionLink("➕ Crear nuevo usuario", "Create", null, new { @class = "btn btn-success fw-bold" })
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.Password)</th>
+                        <th>@Html.DisplayNameFor(model => model.TipoUsuario)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Email</td>
+                            <td>@item.Password</td>
+                            <td>@item.TipoUsuario</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    @Html.ActionLink("✏️ Editar", "Edit", new { id = item.IdUsuario }, new { @class = "btn btn-warning btn-sm text-dark fw-bold" })
+                                    @Html.ActionLink("🔍 Detalles", "Details", new { id = item.IdUsuario }, new { @class = "btn btn-info btn-sm fw-bold text-white" })
+                                    @Html.ActionLink("🗑️ Eliminar", "Delete", new { id = item.IdUsuario }, new { @class = "btn btn-danger btn-sm fw-bold" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 💎 Estilo glassmorphism */
+    .glass-card-usuarios {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
+        padding: 2.5rem 3rem;
+        color: white;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+        .glass-card-usuarios:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+    /* 🧾 Tabla */
+    .table {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+        .table thead th {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: bold;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ✨ Botones */
+    .btn {
+        transition: all 0.3s ease;
+    }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+    /* 🌈 Fondo suave solo si el layout no lo tiene */
+    body {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>

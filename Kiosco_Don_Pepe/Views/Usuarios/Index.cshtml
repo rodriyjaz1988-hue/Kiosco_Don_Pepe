@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Página de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Contenedor centrado -->
+<div class="contenedor-centrado">
+    <div class="glass-card-usuarios animate__animated animate__fadeInDown shadow-lg">
+        <h1 class="display-5 fw-bold mb-3">👥 Página de Usuarios</h1>
+        <p class="lead mb-4">Gestioná tus productos, revisá tu carrito y disfrutá la experiencia con estilo.</p>
+
+        <hr class="my-4 border-light opacity-50" />
+
+        <div class="d-flex justify-content-center gap-4 mt-4">
+            @Html.ActionLink("🛒 Ver productos", "Lista", "Producto", null, new { @class = "btn btn-primary btn-lg rounded-pill fw-bold shadow" })
+            @Html.ActionLink("🧺 Ir al carrito", "VerCarrito", "Carrito", null, new { @class = "btn btn-success btn-lg rounded-pill fw-bold shadow" })
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 🌈 Fondo degradado global */
+    body {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* 🧭 Contenedor para centrar vertical y horizontalmente */
+    .contenedor-centrado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    /* 💎 Tarjeta con efecto Glassmorphism */
+    .glass-card-usuarios {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
+        padding: 3rem;
+        color: #fff;
+        text-align: center;
+        max-width: 700px;
+        width: 90%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        /* ✨ Hover */
+        .glass-card-usuarios:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 🔠 Tipografía */
+        .glass-card-usuarios h1 {
+            color: #f8f9fa;
+            font-weight: 800;
+        }
+
+        .glass-card-usuarios p {
+            color: #e0e0e0;
+        }
+
+    /* 🧈 Botones */
+    .btn {
+        transition: all 0.3s ease;
+    }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+</style>

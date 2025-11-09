@@ -1,0 +1,162 @@
+﻿/* --- Estilos para la Vista de Login con estructura HTML simple --- */
+
+body {
+    /* (Mantenemos los estilos originales, pero añadimos el centrado en el div principal) */
+    /* Este estilo base no debería romperse con el Layout, pero es mejor que el Login no lo use */
+    /* Si el Login usa Layout = null, este body funciona. Si usa el Layout, este body es ignorado. */
+}
+
+/* Contenedor principal para centrar el formulario */
+.login-simple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f0f2f5; /* Fondo limpio */
+}
+
+/* La tarjeta que envuelve tu formulario */
+.login-simple-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .login-simple-card h2 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+    /* Estilo para los campos de entrada y etiquetas */
+    .login-simple-card label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #495057;
+    }
+
+    .login-simple-card input[type="text"],
+    .login-simple-card input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box; /* Importante para el padding */
+    }
+
+    /* Estilo para el botón de ingresar */
+    .login-simple-card button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 15px;
+        transition: background-color 0.2s;
+    }
+
+        .login-simple-card button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .login-simple-card hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilo para el mensaje de error */
+    .login-simple-card p[style*="color:red"] {
+        text-align: center;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+/* --- Estilos Generales para Vistas de Datos (Usuarios, Productos) --- */
+
+/* Mejora la tabla de productos o usuarios */
+.table-moderna {
+    /* Fondo limpio y esquinas suaves */
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Importante para que las esquinas redondeadas funcionen bien */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    border: none;
+}
+
+    .table-moderna thead th {
+        /* Cabeceras de tabla destacadas */
+        background-color: #007bff; /* Color primario de Bootstrap */
+        color: white;
+        font-weight: 600;
+        border: none;
+    }
+
+    .table-moderna tbody tr:hover {
+        /* Efecto hover suave para filas */
+        background-color: #f8f9fa;
+        cursor: pointer;
+    }
+
+    .table-moderna tbody td {
+        vertical-align: middle;
+    }
+
+/* Estilo para títulos de sección */
+.seccion-titulo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ced4da;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo para los botones de acción en las tablas */
+.btn-accion {
+    margin-right: 5px;
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+/* Estilo Glassmorphism para Tarjeta de Usuarios */
+.glass-card-usuarios {
+    /* Fondo semi-transparente para el efecto */
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Efecto de desenfoque (el "glassmorphism") */
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    color: white; /* Texto blanco para contrastar con el fondo borroso */
+    max-width: 700px;
+    margin: 40px auto; /* Centrar la tarjeta */
+    text-align: center;
+}
+
+    .glass-card-usuarios h1 {
+        color: #f8f9fa; /* Color blanco/claro */
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+/* Nota: Para que el efecto se vea bien, tu <body> principal debe tener un fondo complejo (como el del Login). */
+/* Si tu _Layout.cshtml no tiene fondo, puedes agregar uno a su <body> en el CSS. */
+/* Ejemplo de fondo base (opcional si tu Layout ya tiene uno): */
+/*
+body {
+    background-image: url('https://images.unsplash.com/photo-1542435503-921c583769c0');
+    background-size: cover;
+    background-attachment: fixed;
+}
+*/
